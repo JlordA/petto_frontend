@@ -65,7 +65,7 @@ const bioDiv = document.querySelector("#pet-bio")
 
 
 const petFetch = (id) => {
-    fetch(`http://localhost:3000/api/pets/${id}`)
+    fetch(`https://pettodigital.herokuapp.com/api/pets/${id}`)
         .then(r => r.json())
         .then(petObject => {
             // console.log(petObject)
@@ -74,7 +74,7 @@ const petFetch = (id) => {
 }
 
 const allPetFetch = () => {
-    fetch('http://localhost:3000/api/pets/')
+    fetch('https://pettodigital.herokuapp.com/api/pets')
         .then(r => r.json())
         .then(petArray => {
             
@@ -97,7 +97,7 @@ const allPetFetch = () => {
 } 
 
 const userFetch = (name) => {    
-    fetch(`http://localhost:3000/api/users/${name}`)
+    fetch(`https://pettodigital.herokuapp.com/api/users/${name}`)
     .then(r => r.json())
     .then(loginUser => {
         // console.log(loginUser)
@@ -297,7 +297,7 @@ deleteUser.addEventListener("click", (event) =>{
     let r = confirm("Are you Sure you want to Delete your account?")
     if (r == true) {
     location.reload()
-    fetch(`http://localhost:3000/api/users/${username.textContent}`, {
+    fetch(`https://pettodigital.herokuapp.com/api/users/${username.textContent}`, {
         method: 'DELETE'
     })
     } else {
@@ -337,7 +337,7 @@ petList.addEventListener("click", (event) => {
 heartIcon.addEventListener("click", () => {
 
     if (petCurrent.happiness < 100) {
-    fetch(`http://localhost:3000/api/pets/${petId}`, {
+    fetch(`https://pettodigital.herokuapp.com/api/pets/${petId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -448,7 +448,7 @@ statBtns.addEventListener("click", (e) => {
     }
     // console.log(petId)
     //debugger
-    fetch(`http://localhost:3000/api/pets/${petId}`, {
+    fetch(`https://pettodigital.herokuapp.com/api/pets/${petId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',

@@ -42,7 +42,7 @@ usernameSignup.addEventListener("submit", (e)=>{
       name: name
     }
 
-    fetch(`http://localhost:3000/api/users`, {
+    fetch(`https://pettodigital.herokuapp.com/api/users`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ petSignup.addEventListener("submit", (e)=>{
     } else {
 
       console.log(userId)
-      fetch(`http://localhost:3000/api/pets`, {
+      fetch(`https://pettodigital.herokuapp.com/api/pets`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
